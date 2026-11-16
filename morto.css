@@ -1,0 +1,402 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --fundo: #0b1020;
+  --painel: #151d32;
+  --painel-claro: #1c2740;
+  --texto: #f4f6ff;
+  --suave: #9ca9c4;
+  --verde: #9be564;
+  --borda: rgba(255,255,255,.09);
+  --vermelho: #ff777e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--texto);
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    #1a2a49 0%,
+    var(--fundo) 58%
+  );
+  font-family: 'Manrope', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 28px 16px 36px;
+}
+
+.container {
+  width: 100%;
+  max-width: 720px;
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 2px 28px;
+}
+
+.marca {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  font-size: 13px;
+}
+
+.marca-icone {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border-radius: 10px;
+  color: #101827;
+  background: var(--verde);
+  font-size: 20px;
+}
+
+.destaque {
+  color: var(--verde);
+}
+
+.etiqueta {
+  border: 1px solid var(--borda);
+  color: var(--suave);
+  border-radius: 30px;
+  padding: 7px 12px;
+  font: 10px 'DM Mono', monospace;
+  letter-spacing: 1px;
+}
+
+.painel {
+  background: linear-gradient(
+    145deg,
+    rgba(25,35,58,.98),
+    rgba(18,26,45,.98)
+  );
+  border: 1px solid var(--borda);
+  border-radius: 24px;
+  padding: 34px 42px 30px;
+  box-shadow: 0 25px 80px rgba(0,0,0,.3);
+}
+
+.cabecalho {
+  text-align: center;
+}
+
+.sobretitulo,
+.rotulo {
+  color: var(--verde);
+  font: 500 10px 'DM Mono', monospace;
+  letter-spacing: 1.7px;
+}
+
+h1 {
+  margin: 10px 0 8px;
+  font-size: clamp(30px, 6vw, 43px);
+  line-height: 1.15;
+  letter-spacing: -1.8px;
+}
+
+h1 span {
+  color: var(--verde);
+}
+
+.subtitulo {
+  color: var(--suave);
+  font-size: 13px;
+  margin: 0;
+}
+
+.configuracoes {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 16px;
+  margin: 30px 0 20px;
+}
+
+.configuracoes label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--suave);
+  font-size: 11px;
+}
+
+select {
+  background: var(--painel-claro);
+  border: 1px solid var(--borda);
+  color: var(--texto);
+  padding: 10px 12px;
+  border-radius: 9px;
+  font: 600 12px 'Manrope', sans-serif;
+  outline: none;
+}
+
+.categoria-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 7px;
+}
+
+.categoria-wrap strong {
+  font-size: 13px;
+}
+
+.status {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 12px;
+}
+
+.tentativas-card,
+.dica-card {
+  background: rgba(255,255,255,.035);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 15px 17px;
+  min-height: 100px;
+}
+
+.tentativas-card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tentativas-card strong {
+  font-size: 27px;
+  line-height: 1;
+}
+
+.vidas {
+  color: var(--verde);
+  font: 14px 'DM Mono', monospace;
+  letter-spacing: 2px;
+  margin-top: 3px;
+}
+
+.vidas .perdida {
+  color: #536078;
+}
+
+.dica-card p {
+  margin: 10px 0 0;
+  color: #d5dced;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.palavra-area {
+  text-align: center;
+  margin: 31px 0 28px;
+}
+
+.palavra {
+  margin: 15px 0 0;
+  min-height: 42px;
+  color: var(--verde);
+  font: 500 clamp(24px, 5vw, 34px) 'DM Mono', monospace;
+  letter-spacing: 5px;
+  overflow-wrap: anywhere;
+}
+
+.entrada-area {
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.entrada-area label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.entrada-linha {
+  display: flex;
+  gap: 9px;
+}
+
+input {
+  width: 72px;
+  height: 48px;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid rgba(155,229,100,.4);
+  border-radius: 10px;
+  background: #0e172a;
+  color: var(--verde);
+  font: 700 20px 'DM Mono', monospace;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--verde);
+  box-shadow: 0 0 0 3px rgba(155,229,100,.12);
+}
+
+.botao {
+  border: 0;
+  border-radius: 10px;
+  padding: 0 19px;
+  font: 700 12px 'Manrope', sans-serif;
+  cursor: pointer;
+  transition: transform .15s, filter .15s;
+}
+
+.botao:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.botao:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.principal {
+  flex: 1;
+  background: var(--verde);
+  color: #142018;
+}
+
+.instrucao {
+  color: #8290ab;
+  font-size: 10px;
+  margin: 9px 0 0;
+}
+
+.mensagem {
+  min-height: 20px;
+  margin: 20px 0;
+  text-align: center;
+  color: #c9d3e8;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mensagem.sucesso {
+  color: var(--verde);
+}
+
+.mensagem.erro {
+  color: var(--vermelho);
+}
+
+.letras-area {
+  border-top: 1px solid var(--borda);
+  padding-top: 17px;
+}
+
+.letras-usadas {
+  margin-top: 10px;
+  min-height: 27px;
+  color: #d9e1f1;
+  font: 12px 'DM Mono', monospace;
+  letter-spacing: 1px;
+  overflow-wrap: anywhere;
+}
+
+.letra-certa {
+  color: var(--verde);
+}
+
+.letra-errada {
+  color: var(--vermelho);
+}
+
+.acoes {
+  display: flex;
+  justify-content: center;
+  margin-top: 19px;
+}
+
+.secundario {
+  min-height: 39px;
+  background: var(--painel-claro);
+  color: var(--texto);
+  border: 1px solid var(--borda);
+}
+
+.placar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 16px 0 22px;
+}
+
+.placar div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 14px;
+  background: rgba(255,255,255,.035);
+  border: 1px solid var(--borda);
+  border-radius: 13px;
+}
+
+.placar-numero {
+  color: var(--verde);
+  font: 500 21px 'DM Mono', monospace;
+}
+
+.placar-label {
+  color: var(--suave);
+  font-size: 10px;
+}
+
+footer {
+  text-align: center;
+  color: #71809d;
+  font-size: 10px;
+}
+
+footer strong {
+  color: #aab6ce;
+  font-weight: 600;
+}
+
+@media (max-width: 560px) {
+  body {
+    padding: 17px 12px 25px;
+  }
+
+  .topo {
+    margin-bottom: 18px;
+  }
+
+  .painel {
+    padding: 26px 19px 23px;
+    border-radius: 19px;
+  }
+
+  .configuracoes {
+    margin-top: 24px;
+  }
+
+  .status {
+    grid-template-columns: 1fr;
+  }
+
+  .tentativas-card {
+    min-height: 86px;
+  }
+
+  .palavra {
+    letter-spacing: 3px;
+  }
+}

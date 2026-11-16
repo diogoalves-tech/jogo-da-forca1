@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adivinhe a Palavra | Web I</title>
+  <link rel="stylesheet" href="morto.css">
+  <script src="acao.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="topo">
+      <div class="marca">
+        <span class="marca-icone">?</span>
+        <span>PALAVRA<span class="destaque">SECRETA</span></span>
+      </div>
+      <span class="etiqueta">PROJETO WEB I</span>
+    </header>
+
+    <section class="painel">
+      <div class="cabecalho">
+        <p class="sobretitulo">DESAFIO DE VOCABULÁRIO</p>
+        <h1>Adivinhe a <span>Palavra</span></h1>
+        <p class="subtitulo">
+          Descubra a palavra secreta antes que suas tentativas acabem.
+        </p>
+      </div>
+
+      <div class="configuracoes">
+        <label for="dificuldade">
+          Dificuldade
+          <select id="dificuldade">
+            <option value="facil">Fácil · 8 tentativas</option>
+            <option value="medio" selected>Médio · 6 tentativas</option>
+            <option value="dificil">Difícil · 4 tentativas</option>
+          </select>
+        </label>
+
+        <div class="categoria-wrap">
+          <span class="rotulo">CATEGORIA</span>
+          <strong id="categoria">—</strong>
+        </div>
+      </div>
+
+      <div class="status">
+        <div class="tentativas-card">
+          <span class="rotulo">TENTATIVAS RESTANTES</span>
+          <strong id="tentativas">6</strong>
+          <div class="vidas" id="vidas"></div>
+        </div>
+
+        <div class="dica-card">
+          <span class="rotulo">DICA</span>
+          <p id="dica">A dica aparecerá aqui.</p>
+        </div>
+      </div>
+
+      <div class="palavra-area">
+        <span class="rotulo">PALAVRA SECRETA</span>
+        <p id="palavra" class="palavra">_ _ _ _ _</p>
+      </div>
+
+      <div class="entrada-area">
+        <label for="letra">Digite uma letra</label>
+
+        <div class="entrada-linha">
+          <input
+            id="letra"
+            type="text"
+            maxlength="1"
+            autocomplete="off"
+            placeholder="A"
+            aria-label="Digite uma letra"
+          >
+
+          <button id="btn-tentar" class="botao principal">
+            Tentar →
+          </button>
+        </div>
+
+        <p class="instrucao">
+          Você também pode pressionar Enter.
+        </p>
+      </div>
+
+      <p id="mensagem" class="mensagem" role="status">
+        Boa sorte! Escolha uma letra para começar.
+      </p>
+
+      <div class="letras-area">
+        <span class="rotulo">LETRAS UTILIZADAS</span>
+        <div id="letras-usadas" class="letras-usadas">
+          Nenhuma letra ainda
+        </div>
+      </div>
+
+      <div class="acoes">
+        <button id="btn-reiniciar" class="botao secundario">
+          ↻ Nova partida
+        </button>
+      </div>
+    </section>
+
+    <section class="placar">
+      <div>
+        <span class="placar-numero" id="partidas">0</span>
+        <span class="placar-label">Partidas</span>
+      </div>
+
+      <div>
+        <span class="placar-numero" id="vitorias">0</span>
+        <span class="placar-label">Vitórias</span>
+      </div>
+
+      <div>
+        <span class="placar-numero" id="derrotas">0</span>
+        <span class="placar-label">Derrotas</span>
+      </div>
+    </section>
+
+    <footer>
+      Desenvolvido com HTML, CSS e JavaScript · Web I
+    </footer>
+  </main>
+</body>
+</html>
